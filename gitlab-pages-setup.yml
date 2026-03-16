@@ -1,0 +1,38 @@
+# GitLab Pages Setup Ansible Playbook
+
+This Ansible playbook sets up static website hosting using GitLab Pages. It automates the deployment process for HTML templates and includes CI/CD configuration.
+
+## Playbook Structure
+
+### Roles
+- **gitlab_pages:** A role to handle GitLab Pages setup.
+
+### Tasks
+- Create necessary directories and files for GitLab Pages.
+- Deploy HTML templates.
+- Configure GitLab CI/CD for automated deployment.
+
+## Sample CI/CD Configuration
+yml
+
+- name: Deploy to GitLab Pages
+  script:
+    - echo "Deploy to GitLab Pages"
+    - cp -r ./your-html-template-path public/
+    - echo "Deployment complete"
+
+## Requirements
+- Ansible >= 2.9
+- GitLab account
+- GitLab runner configured
+
+## Usage
+
+To use this playbook, run:
+```bash
+ansible-playbook gitlab-pages-setup.yml
+```
+
+## Documentation
+1. [GitLab Pages Documentation](https://docs.gitlab.com/ee/user/project/pages/)
+2. [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
